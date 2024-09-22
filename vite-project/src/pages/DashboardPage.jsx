@@ -7,7 +7,7 @@ import BlogComponent from "../components/BlogComponent"
 import { NavLink } from "react-router-dom"
 function Dashboard() {
   return (
-    <div className="md:m-5 flex-col lg:w-3/4 w-full  flex gap-10 self-center p-5">
+    <div className="md:m-5 flex-col lg:w-3/4 w-full  flex gap-10 self-center  " style={{minwidth:'280px'}}>
        <h1 className="text-3xl font-bold lg:m-3 mt-24 mx-3">Rise and shine! Let’s make some money today</h1>
       <div className="w-full bg-white border-2 rounded-lg ">
         <CreateProduct additionalProperties="p-5 w-full"/>
@@ -32,7 +32,7 @@ function Dashboard() {
         {/*  */}
       </div>
 
-      <div className="w-full bg-white border-2 rounded-lg p-5 " style={{minWidth:'280px'}}>
+      <div className="w-full bg-white border-2 rounded-lg p-5" style={{minWidth:'280px'}}>
         <div className="flex  w-full flex-row overflow-x-scroll " >
             <BlogComponent heading="Printif blog" buttonInfo="Read Article"  description="Holiday Guide 2024 – Tackle the Shopping Season Like a Pro"/>
             <BlogComponent heading="Printif blog" buttonInfo="Read Article"  description="Holiday Guide 2024 – Tackle the Shopping Season Like a Pro"/>

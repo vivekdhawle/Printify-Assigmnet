@@ -100,7 +100,7 @@ function App() {
             {
                 displayNav&&(
                   <>
-                    <ul className="absolute bg-white right-10 top-12 border-2 w-72 flex justify-center  h-96  pt-64 overflow-y-scroll flex-col mt-10 gap-5">
+                    <ul className="absolute  bg-white right-5 top-12 border-2 w-72 flex justify-center  h-96  pt-64 overflow-y-scroll flex-col mt-10 gap-5">
                     { 
                       tabs.map((item)=>{return <li key={item.tabName} className="my-2 ml-5 flex  items-center text-lg w-full">
                         {item.more?(
@@ -128,7 +128,7 @@ function App() {
         </div>
                
         </div>
-        <div className={`flex justify-self-center  w-full flex-grow flex-shrink basis-0 ${displayNav?"lg:ml-64":"lg:ml-20"} box-border bg-gray-200  flex-col`} style={{minWidth:"280px"}}>
+        <div className={`flex justify-self-center   w-full flex-grow flex-shrink basis-0  lg:p-0 ${displayNav?"lg:ml-64":"lg:ml-20"} box-border bg-gray-200  flex-col`} style={{minWidth:"280px"}}>
          
           <Outlet/>
         </div>
