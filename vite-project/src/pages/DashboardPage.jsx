@@ -7,8 +7,8 @@ import BlogComponent from "../components/BlogComponent"
 import { NavLink } from "react-router-dom"
 function Dashboard() {
   return (
-    <div className="md:m-5 flex-col lg:w-3/4 w-full  flex gap-10 self-center">
-       <h1 className="text-3xl font-bold m-3 ">Rise and shine! Let’s make some money today</h1>
+    <div className="md:m-5 flex-col lg:w-3/4 w-full  flex gap-10 self-center p-5">
+       <h1 className="text-3xl font-bold lg:m-3 mt-24 mx-3">Rise and shine! Let’s make some money today</h1>
       <div className="w-full bg-white border-2 rounded-lg ">
         <CreateProduct additionalProperties="p-5 w-full"/>
       </div>
