@@ -69,7 +69,7 @@ function App() {
                         {displayNav&&(<><span>{item.tabName}</span>
                           <span className="mr-4 relative"> {">"} </span></>)}
                         </button>
-                        {display[item.tabName]&&<ul className="flex absolute bg-white left-72 border-2 rounded-xl flex-col">
+                        {display[item.tabName]&&<ul className="flex fixed bg-white left-72 border-2 rounded-xl flex-col">
                             {item.more.map(element=><li className="m-1  px-8 text-lg h-full w-full" key={element}>{element}</li>)}
                         </ul>}
                       </>
@@ -85,7 +85,7 @@ function App() {
         </div>
             </div>
 
-      <div className="lg:hidden w-full  flex-shrink-0 flex h-20 border-2 bg-white items-center justify-between " style={{minWidth:"280px"}}>
+      <div className="lg:hidden w-full fixed flex-shrink-0 flex h-20 border-2 z-10 bg-white items-center justify-between " style={{minWidth:"280px"}}>
             <div className="w-full justify-center items-center">
               <h1 className="font-bold text-3xl text-left mb-5 box-border  ">Printify</h1>
             </div>
@@ -97,7 +97,7 @@ function App() {
             {
                 displayNav&&(
                   <>
-                    <ul className="absolute right-10 top-12 border-2 w-72 flex justify-center  h-96  pt-64 overflow-y-scroll flex-col mt-10 gap-5">
+                    <ul className="absolute bg-white right-10 top-12 border-2 w-72 flex justify-center  h-96  pt-64 overflow-y-scroll flex-col mt-10 gap-5">
                     { 
                       tabs.map((item)=>{return <li key={item.tabName} className="my-2 ml-5 flex  items-center text-lg w-full">
                         {item.more?(
@@ -125,7 +125,7 @@ function App() {
         </div>
                
         </div>
-        <div className={`flex justify-self-center  w-full flex-grow flex-shrink basis-0 lg:${displayNav?"ml-64":"ml-20"} box-border bg-gray-200  flex-col`} style={{minWidth:"280px"}}>
+        <div className={`flex justify-self-center  w-full flex-grow flex-shrink basis-0 ${displayNav?"lg:ml-64":"lg:ml-20"} box-border bg-gray-200  flex-col`} style={{minWidth:"280px"}}>
          
           <Outlet/>
         </div>
