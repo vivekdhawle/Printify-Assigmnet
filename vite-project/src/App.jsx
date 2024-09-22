@@ -17,7 +17,7 @@ import { NavLink } from "react-router-dom"
 function App() {
   const [display,setDisplay]=useState({})
   const [displayNav,setDisplayNav]=useState()
-  const [name,setName]=useState("")
+  
   const tabs=[
     {imgPath:home,tabName:'Dashboard'},
     {imgPath:catalog,tabName:'Catalog',more:['Catalog Home','Bestsellers','Holiday picks']},
@@ -51,8 +51,11 @@ function App() {
                     <NavLink to={"/Dashboard"}>Printify</NavLink>
                     
                   </div>:<img src={pinch} className="h-10"></img>}</h1>
-                  <button className={`border-2 rounded-full p-2  absolute ${displayNav?"left-56 ":"left-14 "} `}  onClick={()=>{setDisplayNav(prev=>!prev),toggleDropdown(name),setName("")}}>{displayNav?"<":">"}</button>
-              </li>
+                  <button className={`border-2 rounded-full p-2  absolute ${displayNav?"left-56 ":"left-14 "} `}  onClick={()=>{setDisplayNav(prev=>!prev);if (displayNav) {
+                                                    setDisplay({}); 
+                                                  };}}>{displayNav?"<":">"}
+                  </button>
+               </li>
 
               <li className={`border-2 flex  items-center   ${displayNav?"w-full p-5":"w-14 py-5"} w-full text-lg`}>
                   <img src={home} alt="" className={`${displayNav?"h-5 mx-3":"h-5 ml-7"}`}/>
@@ -65,7 +68,7 @@ function App() {
                   {item.more?(
                       <>
                         <img src={item.imgPath} alt="" className={`${displayNav?"h-5":"h-5"} mx-2 `}/>
-                        <button className=" flex w-full justify-between pr-5" onClick={()=>{toggleDropdown(item.tabName),setName(name?item.tabName:"")}}>
+                        <button className=" flex w-full justify-between pr-5" onClick={()=>toggleDropdown(item.tabName)}>
                         {displayNav&&(<><span>{item.tabName}</span>
                           <span className="mr-4 relative"> {">"} </span></>)}
                         </button>
