@@ -3,7 +3,7 @@
 function BlogComponent({heading,icon,buttonInfo,image,video,description}) {
   return (
     <>
-        <div className="flex border-2 rounded-xl p-5 overflow-hidden  flex-col gap-5" style={{width: '360px',maxwidth: '360px'}}>
+        <div className="flex border-2 rounded-xl p-5  flex-shirnk flex-col gap-5 m-3" style={{width:'300px',minwidth: '280px'}}>
             <div className="p-3 border-b-2 flex justify-between">
                 <span>
                     <img src={icon} alt="" />
