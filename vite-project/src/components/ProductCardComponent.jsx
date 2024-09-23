@@ -1,10 +1,11 @@
 import { useState } from "react"
+import { NavLink } from "react-router-dom"
 
 function ProductCard({img1Path,img2Path,description,by,prize,printifyPremium=" ",size}){
 
     const [display,setDisplay]=useState(true)
     return <>
-        <div className="flex relative flex-col overflow-hidden p-3 flex-nowrap  flex-shrink-0 basis-1/4    " onMouseEnter={()=>setDisplay(false)}
+        <NavLink to={"/progress"} className="flex relative flex-col overflow-hidden p-3 flex-nowrap  flex-shrink-0 basis-1/4    " onMouseEnter={()=>setDisplay(false)}
         style={{minWidth:'300px'}} onMouseLeave={()=>setDisplay(true)} >
             <div className="absolute flex-shrink-0 z-10 left-5 top-5 border-2 rounded-xl text-lg border-yellow-600 bg-yellow-100 p-1">Bestseller</div>
             <button className="absolute z-10 right-5 top-5 border-2 rounded-full text-2xl p-1">❤️</button>
@@ -28,7 +29,7 @@ function ProductCard({img1Path,img2Path,description,by,prize,printifyPremium=" "
                 </span >
                 <h2 className="text-base text-gray-500 px-5">{size}</h2>
             </div>
-        </div>
+        </NavLink>
     </>
     
 }

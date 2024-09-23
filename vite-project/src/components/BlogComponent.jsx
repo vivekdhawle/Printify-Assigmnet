@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom"
 
 function BlogComponent({heading,icon,buttonInfo,image,video,description}) {
   return (
@@ -9,7 +9,7 @@ function BlogComponent({heading,icon,buttonInfo,image,video,description}) {
                     <img src={icon} alt="" />
                     <span className="font-bold text-xl">{heading}</span>
                 </span>
-                <h1 className="text-green-500">See more</h1>
+                <NavLink to={"/progress"} className="text-green-500">See more</NavLink>
                
             </div>
             <div className="flex flex-col items-center justify-center">
@@ -22,11 +22,11 @@ function BlogComponent({heading,icon,buttonInfo,image,video,description}) {
                     video&&( <video src={video} controls className="rounded-xl"></video>)
                 }
             </div>
-            <div className="self-end">
+            <NavLink to={"/progress"} className="self-end">
                 {
                     buttonInfo&&(<button className="border-2 px-3 py-2 rounded-xl font-semibold hover:text-green-400">{buttonInfo}</button>)
                 }
-            </div>
+            </NavLink>
         </div>
     </>
   )

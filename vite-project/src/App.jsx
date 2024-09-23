@@ -88,7 +88,7 @@ function App() {
         </div>
             </div>
 
-      <div className="lg:hidden w-full fixed flex-shrink-0 flex h-20 border-2 z-10 bg-white items-center justify-between " style={{minWidth:"280px"}}>
+      <div className="lg:hidden w-full fixed flex-shrink-0 flex h-20 border-2 z-50 bg-white items-center justify-between " style={{minWidth:"280px"}}>
             <div className="w-full justify-center items-center">
               <h1 className="font-bold text-3xl text-left mb-5 box-border  ">Printify</h1>
             </div>
@@ -99,8 +99,8 @@ function App() {
             </div>
             {
                 displayNav&&(
-                  <>
-                    <ul className="absolute  bg-white right-5 top-12 border-2 w-72 flex justify-center  h-96  pt-64 overflow-y-scroll flex-col mt-10 gap-5">
+                  <div className="mt-10  overflow-y-scroll absolute right-5 top-10 bg-white h-96">
+                    <ul className="    border-2 w-72 flex justify-center    flex-col  gap-5">
                     { 
                       tabs.map((item)=>{return <li key={item.tabName} className="my-2 ml-5 flex  items-center text-lg w-full">
                         {item.more?(
@@ -114,7 +114,7 @@ function App() {
                                   {item.more.map(element=><li key={element}>{element}</li>)}
                               </li>}
                             </ul>
-                        ):<NavLink to={item.tabName} className={({isActive})=>`flex flex-row items-center px-2  ${isActive?"border-l-2  h-10  border-green-500 w-full font-bold text-green-500":""} `} >
+                        ):<NavLink to={item.tabName === 'Dashboard' ? '/Dashboard' :"/progress"} className={({isActive})=>`flex flex-row items-center px-2  ${isActive?"border-l-2  h-10  border-green-500 w-full font-bold text-green-500":""} `} >
                           <img src={item.imgPath} alt="" className={`${displayNav?"h-5":"h-5"} mr-5`}/>
                           {displayNav&&<h2>{item.tabName}</h2>}
                       </NavLink>}
@@ -122,7 +122,7 @@ function App() {
                       </li>})
                     }
                     </ul>
-                  </>
+                  </div>
                 )
                }
         </div>

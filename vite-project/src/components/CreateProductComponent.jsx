@@ -1,6 +1,6 @@
 import { useState } from "react"
 import img1 from "../assets/img.svg"
-
+import { NavLink } from "react-router-dom"
 function CreateProduct({additionalProperties}){
     const [display,setDisplay]=useState(true)
     return <>
@@ -48,7 +48,7 @@ function CreateProduct({additionalProperties}){
 
                 <div className="flex justify-end w-full items-center self-end  md:flex-row flex-col mt-5 font-semibold">
                     <span className="text-sm order-2 md:order-1 ">Complete the steps above and earn a $5.00 discount on your next order!</span>
-                    <button className="bg-green-500 order-1 md:order-2  flex-shrink-0 max-md:w-full  text-white px-3 py-1 flex justify-center items-center"><span className="text-2xl">+</span> Create first product</button>
+                    <NavLink to={"/progress"} className="bg-green-500 order-1 md:order-2  flex-shrink-0 max-md:w-full  text-white px-3 py-1 flex justify-center items-center"><span className="text-2xl">+</span> Create first product</NavLink>
                 </div>
                 </div>):""}
             </div>
